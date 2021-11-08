@@ -1,8 +1,8 @@
 export default fetchCountries;
 
-const BASE_URL = 'https://restcountries.com/#api-endpoints-v3-name';
-function fetchCountries(name) {
-    return fetch(`${BASE_URL}${name}`)
+const BASE_URL = `https://restcountries.com/v3/name/${country}?fields=name,capital,population,flag,languages`;
+function fetchCountries(country) {
+    return fetch(`${BASE_URL}`)
         .then(response => {
             if (!response.ok) {
                 throw Error();
