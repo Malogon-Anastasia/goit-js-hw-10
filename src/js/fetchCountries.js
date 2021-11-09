@@ -1,12 +1,11 @@
-export default fetchCountries;
-
-const BASE_URL = `https://restcountries.com/v3/name/${country}?fields=name,capital,population,flag,languages`;
-function fetchCountries(country) {
-    return fetch(`${BASE_URL}`)
-        .then(response => {
+export function fetchCountries(name) {
+    return fetch(`https://restcountries.com/v2/all?fields=name.official,capital,population,flags.svg,languages`)
+     .then(response => {
             if (!response.ok) {
                 throw Error();
             }
             return response.json();
         })
 }
+
+fetchCountries("Peru");
