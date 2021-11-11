@@ -1,0 +1,18 @@
+  {{#each this}}
+   <ul class="country-list">
+      <li class="country">
+        <img src="{{flags.svg}}" alt="" width="30"><span> {{name.official}}</span>
+      </li>
+      <li class="country-list-item">Capital: {{capital}}</li>
+      <li class="country-list-item">Population: {{population}}</li>
+      <li class='list-group-item'>Languages:
+  {{#each languages}}
+       {{#if @last}}
+          <span>{{this}}</span>
+        {{else}}
+          <span>{{this}},</span>
+        {{/if}}
+         {{/each}}
+    </ul>     
+ {{/each}}
+    

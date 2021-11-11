@@ -1,11 +1,13 @@
-export function fetchCountries(name) {
-    return fetch(`https://restcountries.com/v2/all?fields=name.official,capital,population,flags.svg,languages`)
-     .then(response => {
-            if (!response.ok) {
-                throw Error();
-            }
-            return response.json();
-        })
+export function fetchCountries(countries) {
+    return fetch(`https://restcountries.com/v3.1/name/${countries}?fields=name,capital,population,flags,languages` 
+    ).then(function(response) { 
+                if (!response.ok) { 
+                    throw Error(response.statusText); 
+                }
+                return response;
+            })
+        .then(response => {
+        return response.json();
+        
+        });
 }
-
-fetchCountries("Peru");

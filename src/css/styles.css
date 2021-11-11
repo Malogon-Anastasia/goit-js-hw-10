@@ -10,7 +10,12 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
-}
+  background: linear-gradient(90deg, #aea4e3, #d3ffe8);
+  font-family: inherit;
+    font-weight: 700;
+    color: #2d2074;
+    /* text-align: center; */
+  }
 
 #search-box {
   font: inherit;
@@ -18,3 +23,16 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+
+.country {
+  list-style-type: none;
+}
+.country-list {
+  list-style-type: none;
+  padding-left: 0;
+  
+}
+
+
+
+
