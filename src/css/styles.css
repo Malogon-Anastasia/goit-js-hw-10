@@ -14,7 +14,7 @@ body {
   font-family: inherit;
     font-weight: 700;
     color: #2d2074;
-    /* text-align: center; */
+    text-align: center; 
   }
 
 #search-box {
