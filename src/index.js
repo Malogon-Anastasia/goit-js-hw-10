@@ -28,8 +28,8 @@ function onInputChange() {
             return;
          } 
          if (countries.length > 1) {
-             const flags = flags(countries);
-            containerRef.innerHTML = flags;
+             const flag = flags(countries);
+            containerRef.innerHTML = flag;
             return;
         } 
             const markup = countryMarkup(countries);
