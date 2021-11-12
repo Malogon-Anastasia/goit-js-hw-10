@@ -12,16 +12,16 @@ const containerRef = document.querySelector('.country-info');
 
 inputRef.addEventListener('input', debounce(onInputChange, DEBOUNCE));
 
-function onInputChange(evt) {
-    const countryName = evt.target.value.trim();
-        
-    if (evt.target.value === '') {
+function onInputChange() {
+    const countryName = inputRef.value.trim();
+    
+    if (inputRef.value.trim() === '') {
         deleteMarkup();
         return;
     } 
 
     fetchCountries(`${countryName}`).then(countries => {
-        
+       
         if (countries.length > 10 ) {
             Notify.info("Too many matches found. Please enter a more specific name.");
          } 
