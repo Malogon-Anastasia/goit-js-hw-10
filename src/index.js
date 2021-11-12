@@ -40,7 +40,7 @@ function onInputChange() {
         Notify.failure("Oops, there is no country with that name");
         return;
     });
-    console.log(containerRef.textContent = evt.target.value.trim());
+    // console.log(containerRef.textContent = inputRef.value.trim());
 };
     
     
