@@ -17,32 +17,33 @@ function onInputChange() {
    const countryName = inputRef.value.trim();
         
     if (countryName === '') {
-        deleteMarkup();
+        // deleteMarkup();
         return;
     }
 
     fetchCountries(countryName).then(countries => {
         if (countries.length > 10 ) {
-            deleteMarkup();
+            // deleteMarkup();
             Notify.info("Too many matches found. Please enter a more specific name.");
             return;
          } 
          if (countries.length > 1) {
-            containerRef.innerHTML = flags(countries);
+             const flags = flags(countries);
+            containerRef.innerHTML = flags;
             return;
-           
-            } 
-            containerRef.innerHTML = countryMarkup(countries);
+        } 
+            const markup = countryMarkup(countries);
+            containerRef.innerHTML = markup;
                             
     }).catch(error => {
-        deleteMarkup();
+        // deleteMarkup();
         console.log(error);
        return;
     });
         
 }   
     
-function deleteMarkup() {
-    containerRef.innerHTML = '';
-}
+// function deleteMarkup() {
+//     containerRef.innerHTML = '';
+// }
 
