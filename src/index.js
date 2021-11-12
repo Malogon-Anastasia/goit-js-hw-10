@@ -16,7 +16,7 @@ inputRef.addEventListener('input', debounce(onInputChange, DEBOUNCE));
 function onInputChange() {
    const countryName = inputRef.value.trim();
         
-    if (countryName === '') {
+    if (!countryName) {
         // deleteMarkup();
         return;
     }
