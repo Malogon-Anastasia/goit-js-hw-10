@@ -26,7 +26,7 @@ function onInputChange(evt) {
             Notify.info("Too many matches found. Please enter a more specific name.");
          } 
         
-            else if (countries.length > 2) {
+            else if (countries.length > 1) {
                 const list = flags(countries);
                 containerRef.innerHTML = list;
            
