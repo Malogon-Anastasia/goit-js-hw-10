@@ -13,13 +13,17 @@ const containerRef = document.querySelector('.country-info');
 
 inputRef.addEventListener('input', debounce(onInputChange, DEBOUNCE));
 
-function onInputChange() {
+function onInputChange(e) {
    const countryName = inputRef.value.trim();
         
     if (!countryName) {
         deleteMarkup();
         return;
     }
+
+    if (e.data === ' ') {
+        return;
+  }
 
     fetchCountries(countryName).then(countries => {
         if (countries.length > 10 ) {
@@ -46,4 +50,5 @@ function onInputChange() {
 function deleteMarkup() {
     containerRef.innerHTML = '';
 }
+
 
