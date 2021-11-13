@@ -17,13 +17,13 @@ function onInputChange() {
    const countryName = inputRef.value.trim();
         
     if (!countryName) {
-        // deleteMarkup();
+        deleteMarkup();
         return;
     }
 
     fetchCountries(countryName).then(countries => {
         if (countries.length > 10 ) {
-            // deleteMarkup();
+            deleteMarkup();
             Notify.info("Too many matches found. Please enter a more specific name.");
             return;
          } 
@@ -36,14 +36,14 @@ function onInputChange() {
             containerRef.innerHTML = markup;
                             
     }).catch(error => {
-        // deleteMarkup();
+        deleteMarkup();
         console.log(error);
        return;
     });
         
 }   
     
-// function deleteMarkup() {
-//     containerRef.innerHTML = '';
-// }
+function deleteMarkup() {
+    containerRef.innerHTML = '';
+}
 
